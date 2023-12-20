@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import './App.css';
 
 function App() {
@@ -30,6 +30,15 @@ function App() {
         generatePassword()        
     }, [length, setNumberAllowed, setCharacterAllowed, generatePassword])
 
+    // all the functions of the copy button
+    let passwordRef = useRef(null)
+
+    const copyPasswordToClipboard = useCallback(() => {
+        passwordRef.current?.select()
+        passwordRef.current.setSelectionRange(0, 60)
+        window.navigator.clipboard.writeText(password)
+    }, [password])
+
     return (
         <>
             <div className="mainContainer">
@@ -41,10 +50,11 @@ function App() {
                         value={password}
                         placeholder="Password"
                         className="passwordInput"
+                        ref={passwordRef}
                         readOnly
                     />
 
-                    <button className="copyBtn">Copy</button>
+                    <button className="copyBtn" onClick={copyPasswordToClipboard}>Copy</button>
                 </div>
 
                 <div className="passwordController">
