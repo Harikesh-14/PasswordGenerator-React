@@ -1,0 +1,78 @@
+.mainContainer {
+  height: auto;
+  width: 45vw;
+  padding: 20px 30px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 80px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.19);
+  gap: 20px;
+}
+
+.mainContainer .passwordContainer,
+.mainContainer .passwordController  {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.mainContainer .passwordContainer .passwordInput {
+  width: 85%;
+  height: 40px;
+  border: .1rem solid black;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 0 10px;
+  font-size: 100%;
+  color: #000;
+}
+
+.mainContainer .passwordContainer .copyBtn {
+  width: 10%;
+  height: 40px;
+  border: none;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 5px;
+  background-color: #0275d8;
+  color: #fff;
+  font-weight: bold;
+  font-size: 100%;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.mainContainer .passwordContainer .copyBtn:hover{
+  transform: translateY(-6px);
+  background-color: #0056a0;
+}
+
+.mainContainer .passwordController {
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.mainContainer .passwordController .lengthController,
+.mainContainer .passwordController .numberAllowedController,
+.mainContainer .passwordController .characterAllowedController {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+}
+
+.mainContainer .passwordController .numberAllowedController input,
+.mainContainer .passwordController .characterAllowedController input {
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
